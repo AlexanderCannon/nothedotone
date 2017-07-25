@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.home-limit {
+  margin-left: 15vw;
+  max-width: 66vw;
+}
+.work-list > .list-group > .list-group-item {
+ cursor: pointer;
+ transition: all 0.3s;
+}
+.work-list > .list-group > .list-group-item:hover {
+ background: rgba(0,0,0,0.3);
+}
