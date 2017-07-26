@@ -23,7 +23,14 @@ body {
   flex: 1;
   justify-content: center;
 }
-img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.carousel__fullbleed-container > img {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
+  .carousel__fullbleed-image {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    background: red;
+  }

@@ -6,10 +6,10 @@ class FullbleedCarousel extends Component {
   renderImages() {
     return this.props.qualifications.map((image) => {
       return (
-        <div>
-           <img src={image.src} alt={image.alt} /> 
+        <div key={image.id} className="carousel__fullbleed-container">
+          <img className="carousel__fullbleed-image" src={image.src} alt={image.alt} />
         </div>
-      );
+      );  
     });
   };
 
@@ -17,7 +17,7 @@ class FullbleedCarousel extends Component {
     return (
       <div>
         <Carousel>
-           {this.renderImages()} 
+          {this.renderImages()}
         </Carousel>
       </div>
     );
