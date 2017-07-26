@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import WorkList from './WorkList';
-import WorkDetail from './WorkDetail';
+import FullbleedCarousel from './FullbleedCarousel';
 
-class App extends Component {
+class Qualifications extends Component {
   render() {
     return (
       <div>
-       I am another component
+       <FullbleedCarousel/>
       </div>
     );
   }
 }
 
-export default App;
+export default Qualifications;

@@ -1,3 +1,5 @@
+//should be a container
+
 //3rd party
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
