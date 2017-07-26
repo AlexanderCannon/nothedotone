@@ -10,7 +10,7 @@ class Intro extends Component {
           {item.text}
         </p>
       )
-    })
+    });
   }
 
   render() {

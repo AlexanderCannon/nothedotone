@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import './App.css';
-import Intro from './components/Intro'
+import WorkList from './WorkList';
+import WorkDetail from './WorkDetail';
 
 class App extends Component {
   render() {
     return (
-      <Intro />
+      <div>
+       I am another component
+      </div>
     );
   }
 }

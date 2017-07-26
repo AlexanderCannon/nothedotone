@@ -7,8 +7,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //Ours
 import reducers from './reducers';
 import './index.css';
-import App from './App';
-import Work from './Work';
+import App from './components/App';
+import Work from './components/Work';
+import Qualifications from './components/Qualifications';
 import Header from './components/Header';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={App} />
           <Route path="/projects" component={Work} />
+          <Route path="/qualifications" component={Qualifications} />
         </Switch>
       </div>
     </BrowserRouter>

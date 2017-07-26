@@ -6,14 +6,19 @@ import { bindActionCreators } from 'redux';
 import { selectWork } from '../actions/index';
 
 class WorkList extends Component {
-
+  componentWillMount() {
+      this.props.selectWork(this.props.work[0]);
+  }
   renderList() {
     return this.props.work.map((work) => {
       return (
         <li
           key={work.id}
           className='list-group-item'
-          onClick={() => this.props.selectWork(work)} >
+          onClick={() => {
+            this.props.selectWork(work);
+          }
+          }>
           <h2>{work.company}</h2>
           <h3>{work.project}</h3>
         </li>
@@ -27,9 +32,9 @@ class WorkList extends Component {
     };
     return (
       <div className="work-list">
-      <ul className='list-group col-sm-4'>
-        {this.renderList()}
-      </ul>
+        <ul className='list-group col-sm-4'>
+          {this.renderList()}
+        </ul>
       </div>
     );
   };

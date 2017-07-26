@@ -14,3 +14,12 @@ body {
 .work-list > .list-group > .list-group-item:hover {
  background: rgba(0,0,0,0.3);
 }
+.nav {
+  display: flex;
+  flex-direction: horizontal;
+}
+.nav-link {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}

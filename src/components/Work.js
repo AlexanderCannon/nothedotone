@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-import WorkList from './components/WorkList';
-import WorkDetail from './components/WorkDetail';
-
-import './App.css';
+import WorkList from './WorkList';
+import WorkDetail from './WorkDetail';
 
 class App extends Component {
   render() {
