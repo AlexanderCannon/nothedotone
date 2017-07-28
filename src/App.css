@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 20vh
 }
 
 .App-logo {
@@ -9,7 +10,7 @@
 
 .app-header {
   background-color: #222;
-  height: 150px;
+  height: 20vh;
   padding: 20px;
   color: white;
 }
@@ -21,4 +22,13 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#raptor {
+  min-height: 100vh;
+  animation: App-logo-spin infinite 10s reverse;
+  z-index: -100;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
