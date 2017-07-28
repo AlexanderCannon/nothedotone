@@ -26,9 +26,10 @@
 
 #raptor {
   min-height: 100vh;
-  animation: App-logo-spin infinite 10s reverse;
+  animation: App-logo-spin infinite 5s reverse;
   z-index: -100;
-  position: fixed;
+   position: relative; 
   left: 0;
   top: 0;
+  justify-content: center;
 }
