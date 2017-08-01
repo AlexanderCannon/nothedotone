@@ -24,7 +24,7 @@ class Intro extends Component {
 }
 function mapStateToProps(state) {
   return {
-    intro: state.intro
+    intro: state.Intro
   }
 }
 

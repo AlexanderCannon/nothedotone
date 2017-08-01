@@ -5,12 +5,14 @@ import Work from './Work'
 import WorkActive from './WorkActive'
 import Intro from './Intro'
 import Qualifications from './Qualifications'
+import Skills from './Skills'
 
 const rootReducer = combineReducers({
-  work:Work,
-  workActive:WorkActive,
-  intro: Intro,
-  qualifications: Qualifications
+  Work,
+  WorkActive,
+  Intro,
+  qualifications: Qualifications,
+  Skills
 });
 
 export default rootReducer;

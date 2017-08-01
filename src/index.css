@@ -45,3 +45,32 @@ body {
   color: white;
   width: 100%;
 }
+
+#raptor {
+  min-height: 100vh;
+  animation: App-logo-spin infinite 5s reverse;
+  z-index: -100;
+  position: fixed; 
+  left: 0;
+  top: 0;
+  justify-content: center;
+}
+
+.chart__holder {
+  justify-content: center;
+  width: 100vw;
+  left:0;
+  display: block;
+  margin: auto;
+}
+.chart__holder > .chart__svg {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 5vh;
+}
+.chart__holder > .chart__svg > text {
+color: #337ab7;
+}

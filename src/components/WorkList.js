@@ -42,7 +42,7 @@ class WorkList extends Component {
 
 function mapStateToProps(state) {
   return {
-    work: state.work
+    work: state.Work
   };
 };
 

@@ -23,13 +23,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-#raptor {
-  min-height: 100vh;
-  animation: App-logo-spin infinite 5s reverse;
-  z-index: -100;
-   position: relative; 
-  left: 0;
-  top: 0;
-  justify-content: center;
-}

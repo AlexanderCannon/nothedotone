@@ -10,9 +10,10 @@ import './index.css';
 import App from './components/App';
 import Work from './components/Work';
 import Qualifications from './components/Qualifications';
+import Skills from './components/Skills'
 import Header from './components/Header';
 import registerServiceWorker from './registerServiceWorker';
-
+import kcListner from './kcListner.js'
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Header />
         <Switch>
           <Route exact path="/" component={App} />
+          <Route path="/skills" component={Skills} />
           <Route path="/projects" component={Work} />
           <Route path="/about" component={Qualifications} />
         </Switch>
@@ -30,3 +32,4 @@ ReactDOM.render(
   </Provider>
   , document.querySelector('#root'));
 registerServiceWorker();
+kcListner();

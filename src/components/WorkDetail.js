@@ -24,7 +24,7 @@ class WorkDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    work: state.workActive
+    work: state.WorkActive
   };
 }
 
