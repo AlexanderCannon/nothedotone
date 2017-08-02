@@ -58,10 +58,8 @@ body {
 
 .chart__holder {
   justify-content: center;
-  width: 100vw;
-  left:0;
   display: block;
-  margin: auto;
+  margin: 0 auto;
 }
 .chart__holder > .chart__svg {
   position: relative;
@@ -69,8 +67,32 @@ body {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  top: 5vh;
 }
 .chart__holder > .chart__svg > text {
-color: #337ab7;
+fill: #337ab7;
+}
+chart__holder > svg.chart__svg > g > g >g > path {
+  transition: 1s;
+  will-change: transform;
+}
+.chart__holder > svg.chart__svg > g > g >g:hover > path {
+transform: scale(0.9);
+}
+.chart__holder > svg.chart__svg > g > g > g > .tool-tip {
+  display: none;
+}
+.chart__holder > svg.chart__svg > g > g > g:hover > .tool-tip {
+  display: block;
+}
+.chart__holder > svg.chart__svg > g > g > g  > g > text {
+  fill: red;
+}
+.chart__tool-tip {
+  display: none;
+  position: fixed;
+   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top:50%
 }
