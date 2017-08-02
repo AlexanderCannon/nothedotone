@@ -32,7 +32,6 @@ body {
   min-height: 100vh;
   object-fit: cover;
   display: block;
-  background: red;
 }
 
 .slider-list {

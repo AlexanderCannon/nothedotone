@@ -2,7 +2,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //Ours
 import reducers from './reducers';
@@ -10,8 +10,10 @@ import './index.css';
 import App from './components/App';
 import Work from './components/Work';
 import Qualifications from './components/Qualifications';
-import Skills from './components/Skills'
+import Skills from './components/Skills';
 import Header from './components/Header';
+import Footer from './components/Footer';
+
 import registerServiceWorker from './registerServiceWorker';
 import kcListner from './kcListner.js'
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -27,6 +29,7 @@ ReactDOM.render(
           <Route path="/projects" component={Work} />
           <Route path="/about" component={Qualifications} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   </Provider>
