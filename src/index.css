@@ -6,6 +6,7 @@ body {
 .home-limit {
   margin-left: 15vw;
   max-width: 66vw;
+  margin-bottom: 5vh;
 }
 .work-list > .list-group > .list-group-item {
  cursor: pointer;
