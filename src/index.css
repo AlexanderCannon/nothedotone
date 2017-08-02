@@ -85,7 +85,6 @@ transform: scale(0.9);
   display: block;
 }
 .chart__holder > svg.chart__svg > g > g > g  > g > text {
-  fill: red;
 }
 .chart__tool-tip {
   display: none;

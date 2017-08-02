@@ -58,9 +58,9 @@ class Donut extends Component {
         }}>
           {d.data.label}
         </text>
-        <g className="tool-tip">
-          <text x="0" y="0" font-size="25" dy="0">
-          {d.data.list.map((i) => <tspan x="0" dy="1em">{i.skill}</tspan>)}
+        <g className="tool-tip" transform={`translate(${labelArc.centroid(d)})`} >
+          <text x="-0" y="0" fontSize="15" dy="0">
+          {d.data.list.map((i, k) => <tspan key={k} x="0" dy="1.5em">{i.skill}</tspan>)}
           </text>
         </g>
       </g>
