@@ -13,6 +13,7 @@ import Qualifications from './components/Qualifications';
 import Skills from './components/Skills';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 import registerServiceWorker from './registerServiceWorker';
 import kcListner from './kcListner.js'
@@ -28,6 +29,7 @@ ReactDOM.render(
           <Route path="/skills" component={Skills} />
           <Route path="/projects" component={Work} />
           <Route path="/about" component={Qualifications} />
+          <Route path="/contact" component={Contact} />
         </Switch>
         <Footer />
       </div>

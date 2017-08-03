@@ -15,7 +15,6 @@ class Donut extends Component {
   }
 
   handleResize(e) {
-    console.log("I ma resizied");
     this.state = ({ windowWidth: 100 });
     return true
   }
