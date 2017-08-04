@@ -9,16 +9,22 @@ class ContactCompany extends Component {
       <div className="contact__form-container">
         Tell me more!
         <label>
-          <span>Name:</span>
+          <span>File:</span>
           <input type="text" name="name" onChange={this.props.handleChange} />
         </label>
         <label>
-          <span>Company: </span>
+          <span>Title: </span>
           <input type="text" name="company" onChange={this.props.handleChange} />
         </label>
         <label>
-          <span> Your Message: </span>
-          <textarea name="message" onChange={this.props.handleChange} />
+          <span>Location: </span>
+          <select name="location" onChange={this.props.handleChange}>
+            <option value="london">London</option>
+            <option value="nyc">New York</option>
+            <option value="sanfran">San Fransisco</option>
+            <option value="other">Other, please select</option>
+          </select>
+            {this.props.location === 'other' ?<input type="text" name="otherLocation" onChange={this.props.handleChange} /> : ''}
         </label>
       </div>
     );

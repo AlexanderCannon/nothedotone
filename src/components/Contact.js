@@ -22,10 +22,10 @@ class Contact extends Component {
     this.state.value[name] = value
     if (this.state.value.name && this.state.value.message) {
       if (this.state.show !== 'friend' && this.state.value.company) {
-        this.setState({page2: true})
+        this.setState({ page2: true })
       }
-      if(this.state.show === 'friend' || this.state.show === 'company' || this.state.hasSpec)
-      return this.setState({ ready: true })
+      if (this.state.show === 'friend' || this.state.show === 'company' || this.state.hasSpec)
+        return this.setState({ ready: true })
     }
     return
   }
@@ -37,7 +37,7 @@ class Contact extends Component {
         show: !prevState.show
       }));
     }
-    return this.setState({ show: from, sender: from});
+    return this.setState({ show: from, sender: from });
   }
   handleSubmit(e) {
     alert('A name was submitted: ' + JSON.stringify(this.state.value));
@@ -45,29 +45,31 @@ class Contact extends Component {
   }
   nextPage(e) {
     e.preventDefault();
-    this.setState({show: 'spec'});
+    this.setState({ show: 'spec' });
   }
 
   render() {
     return (
-      <from className="contact__from-base">
-        First things first, I am an:
+      <div className="contact__form-holder">
+        <from className="contact__from-base">
+          First things first, I am an:
         <button onClick={(e) => this.handleToggleClick(e, 'agent')} className="agent btn btm-primary">
-          Agent
+            Agent
         </button>
-        <button onClick={(e) => this.handleToggleClick(e, 'company')} className="company btn btm-primary">
-          Company
+          <button onClick={(e) => this.handleToggleClick(e, 'company')} className="company btn btm-primary">
+            Company
         </button>
-        <button onClick={(e) => this.handleToggleClick(e, 'friend')} className="company btn btm-primary">
-          Just wanted to say hi!
+          <button onClick={(e) => this.handleToggleClick(e, 'friend')} className="company btn btm-primary">
+            Just wanted to say hi!
         </button>
-        <ContactAgent show={this.state.show} handleChange={this.handleChange} />
-        <ContactCompany show={this.state.show} handleChange={this.handleChange} />
-        <ContactFriend show={this.state.show} handleChange={this.handleChange} />
-        <ContactJobSpec show={this.state.value} />
-        {this.state.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.nextPage(e)} /> : ''}
-        {this.state.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
-      </from>
+          <ContactAgent show={this.state.show} handleChange={this.handleChange} />
+          <ContactCompany show={this.state.show} handleChange={this.handleChange} />
+          <ContactFriend show={this.state.show} handleChange={this.handleChange} />
+          <ContactJobSpec show={this.state.show} handleChange={this.handleChange}/>
+          {this.state.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.nextPage(e)} /> : ''}
+          {this.state.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
+        </from>
+      </div>
     );
   }
 }
