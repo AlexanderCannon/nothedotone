@@ -1,3 +1,5 @@
+import { ADD_TO_FORM, PICK_FORM, SUBMIT_FORM } from '../actions/index'
+
 export default function (state = {}, action) {
   switch (action.type) {
     case 'ADD_TO_FORM':
@@ -7,7 +9,7 @@ export default function (state = {}, action) {
       return x;
     case 'PICK_FORM':
       let picked = action.payload !== state.picked ? action.payload : !state.picked;
-      let y = { ...state, picked, from:picked }
+      let y = { ...state, picked, from: picked }
       y = pickButtons(y, state.picked);
       return y
     case 'SUBMIT_FORM':
