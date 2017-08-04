@@ -7,7 +7,7 @@ import ContactCompany from './ContactCompany';
 import ContactFriend from './ContactFriend';
 import ContactJobSpec from './ContactJobSpec';
 
-import { addToForm } from '../actions/index';
+import { addToForm, pickForm } from '../actions/index';
 
 class Contact extends Component {
   constructor(props) {
@@ -18,30 +18,12 @@ class Contact extends Component {
     }
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(e) {
-    const { name, value } = e.target
-    this.props.addToForm({ name, value });
-    this.state.value[name] = value
-    if (this.state.value.name && this.state.value.message) {
-      if (this.state.show !== 'friend' && this.state.value.company) {
-        this.setState({ page2: true });
-      }
-      if (this.state.show === 'friend' || this.state.show === 'company' || this.state.hasSpec)
-        return this.setState({ ready: true });
-    }
-    return
   }
 
   handleToggleClick(e, from) {
     e.preventDefault();
-    if (from === this.state.show) {
-      return this.setState(prevState => ({
-        show: !prevState.show
-      }));
-    }
-    return this.setState({ show: from, sender: from });
+    return this.props.pickForm(from);
+    this.state.picked
   }
   handleSubmit(e) {
     alert('A name was submitted: ' + JSON.stringify(this.state.value));
@@ -56,22 +38,22 @@ class Contact extends Component {
     return (
       <div className="contact__form-holder">
         <from className="contact__from-base">
-          First things first, I am an:
+          First things first;<br/> I...
         <button onClick={(e) => this.handleToggleClick(e, 'agent')} className="agent btn btm-primary">
-            Agent
+            am an agent.
         </button>
           <button onClick={(e) => this.handleToggleClick(e, 'company')} className="company btn btm-primary">
-            Company
+            am a company
         </button>
           <button onClick={(e) => this.handleToggleClick(e, 'friend')} className="company btn btm-primary">
-            Just wanted to say hi!
+            just wanted to say hi!
         </button>
-          <ContactAgent show={this.state.show} handleChange={this.handleChange} />
-          <ContactCompany show={this.state.show} handleChange={this.handleChange} />
-          <ContactFriend show={this.state.show} handleChange={this.handleChange} />
-          <ContactJobSpec show={this.state.show} handleChange={this.handleChange} />
-          {this.state.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.nextPage(e)} /> : ''}
-          {this.state.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
+          <ContactAgent />
+          <ContactCompany />
+          <ContactFriend />
+          <ContactJobSpec />
+          {this.props.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.nextPage(e)} /> : ''}
+          {this.props.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
         </from>
       </div>
     );
@@ -85,7 +67,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addToForm }, dispatch);
+  return bindActionCreators({ addToForm, pickForm }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

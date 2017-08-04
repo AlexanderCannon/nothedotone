@@ -6,7 +6,7 @@ import { addToForm } from '../actions/index';
 
 class ContactCompany extends Component {
   render() {
-    if (!this.props.show || this.props.show !== 'spec') {
+    if (!this.props.contactForm.picked || this.props.contactForm.picked !== 'spec') {
       return null;
     }
     return (

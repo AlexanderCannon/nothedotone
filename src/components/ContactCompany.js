@@ -21,7 +21,7 @@ class ContactCompany extends Component {
   }
 
   render() {
-    if (!this.props.show || this.props.show !== 'company') {
+    if (!this.props.contactForm.picked || this.props.contactForm.picked !== 'company') {
       return null;
     }
     return (

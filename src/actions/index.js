@@ -10,3 +10,9 @@ export function addToForm(payload) {
     payload
   };
 };
+export function pickForm(payload) {
+  return {
+    type: 'PICK_FORM',
+    payload
+  };
+};

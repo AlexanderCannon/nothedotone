@@ -21,7 +21,7 @@ class ContactAgent extends Component {
   }
 
   render() {
-    if (!this.props.show || this.props.show !== 'agent') {
+    if (!this.props.contactForm.picked || this.props.contactForm.picked !== 'agent') {
       return null;
     }
     return (
