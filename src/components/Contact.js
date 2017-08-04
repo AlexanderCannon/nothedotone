@@ -7,7 +7,7 @@ import ContactCompany from './ContactCompany';
 import ContactFriend from './ContactFriend';
 import ContactJobSpec from './ContactJobSpec';
 
-import { addToForm, pickForm } from '../actions/index';
+import { addToForm, pickForm, submitForm } from '../actions/index';
 
 class Contact extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Contact extends Component {
     return this.props.pickForm(from);
   }
   handleSubmit(e) {
-    alert('A name was submitted: ' + JSON.stringify(this.state.value));
+    this.props.submitForm();
     e.preventDefault();
   }
 
@@ -62,7 +62,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addToForm, pickForm }, dispatch);
+  return bindActionCreators({ addToForm, pickForm, submitForm }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

@@ -16,3 +16,9 @@ export function pickForm(payload) {
     payload
   };
 };
+export function submitForm(payload) {
+  return {
+    type: 'SUBMIT_FORM',
+    payload
+  };
+};
