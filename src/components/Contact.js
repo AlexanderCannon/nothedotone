@@ -23,15 +23,10 @@ class Contact extends Component {
   handleToggleClick(e, from) {
     e.preventDefault();
     return this.props.pickForm(from);
-    this.state.picked
   }
   handleSubmit(e) {
     alert('A name was submitted: ' + JSON.stringify(this.state.value));
     e.preventDefault();
-  }
-  nextPage(e) {
-    e.preventDefault();
-    this.setState({ show: 'spec' });
   }
 
   render() {
@@ -52,8 +47,8 @@ class Contact extends Component {
           <ContactCompany />
           <ContactFriend />
           <ContactJobSpec />
-          {this.props.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.nextPage(e)} /> : ''}
-          {this.props.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
+          {this.props.contactForm.page2 ? <input type="submit" value="Add a spec" onClick={(e) => this.handleToggleClick(e, 'spec')}  /> : ''}
+          {this.props.contactForm.ready ? <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} /> : ''}
         </from>
       </div>
     );

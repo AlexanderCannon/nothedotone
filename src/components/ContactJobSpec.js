@@ -14,11 +14,11 @@ class ContactCompany extends Component {
         Tell me more!
         <label>
           <span>File:</span>
-          <input type="text" name="name" onChange={this.props.handleChange} />
+          <input type="text" name="file" onChange={this.props.handleChange} />
         </label>
         <label>
           <span>Title: </span>
-          <input type="text" name="company" onChange={this.props.handleChange} />
+          <input type="text" name="title" onChange={this.props.handleChange} />
         </label>
         <label>
           <span>Location: </span>
