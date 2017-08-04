@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { addToForm } from '../actions/index';
 
 class ContactFriend extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      contactForm: {
+        name: '',
+        message: ''
+      }
+    }
+  }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.props.addToForm({ name, value });
   }
 
   render() {
@@ -15,15 +28,25 @@ class ContactFriend extends Component {
         <span role="img" aria-label="eyes emoji">👀</span> Check out my social links below, or send me a message directly!
         <label>
           <span>Name:</span>
-          <input type="text" name="name" onChange={this.props.handleChange} />
+          <input type="text" name="name" onChange={(e) => this.handleChange(e)} value={this.props.contactForm.name}/>
         </label>
         <label>
           <span> Your Message: </span>
-          <textarea name="message" onChange={this.props.handleChange} />
+          <textarea name="message" onChange={(e) => this.handleChange(e)} value={this.props.contactForm.message}/>
         </label>
       </div>
     );
   }
 }
 
-export default (ContactFriend);
+function mapStateToProps(state) {
+  return {
+    contactForm: state.ContactForm
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addToForm }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactFriend);

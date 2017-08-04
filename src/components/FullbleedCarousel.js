@@ -27,7 +27,7 @@ class FullbleedCarousel extends Component {
 
 function mapStateToProps(state) {
   return {
-    qualifications: state.qualifications
+    qualifications: state.Qualifications
   };
 }
 

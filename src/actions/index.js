@@ -4,3 +4,9 @@ export function selectWork(payload) {
     payload
   };
 };
+export function addToForm(payload) {
+  return {
+    type: 'ADD_TO_FORM',
+    payload
+  };
+};

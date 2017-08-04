@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { addToForm } from '../actions/index';
 
 class ContactCompany extends Component {
-
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      contactForm: {
+        name: '',
+        company: '',
+        message: ''
+      }
+    }
+  }
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.props.addToForm({ name, value });
   }
 
   render() {
@@ -16,19 +29,29 @@ class ContactCompany extends Component {
         Tell me more!
         <label>
           <span>Name:</span>
-          <input type="text" name="name" onChange={this.props.handleChange} />
+          <input type="text" name="name" onChange={(e) => this.handleChange(e)} value={this.props.contactForm.name} />
         </label>
         <label>
           <span>Company: </span>
-          <input type="text" name="company" onChange={this.props.handleChange} />
+          <input type="text" name="company" onChange={(e) => this.handleChange(e)} value={this.props.contactForm.company} />
         </label>
         <label>
           <span> Your Message: </span>
-          <textarea name="message" onChange={this.props.handleChange} />
+          <textarea name="message" onChange={(e) => this.handleChange(e)} value={this.props.contactForm.message} />
         </label>
       </div>
     );
   }
 }
 
-export default (ContactCompany);
+function mapStateToProps(state) {
+  return {
+    contactForm: state.ContactForm
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addToForm }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactCompany);

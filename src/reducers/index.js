@@ -6,13 +6,15 @@ import WorkActive from './WorkActive'
 import Intro from './Intro'
 import Qualifications from './Qualifications'
 import Skills from './Skills'
+import ContactForm from './ContactForm'
 
 const rootReducer = combineReducers({
   Work,
   WorkActive,
   Intro,
-  qualifications: Qualifications,
-  Skills
+  Qualifications,
+  Skills,
+  ContactForm
 });
 
 export default rootReducer;

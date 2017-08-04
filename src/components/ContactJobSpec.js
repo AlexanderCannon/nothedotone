@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { addToForm } from '../actions/index';
 
 class ContactCompany extends Component {
   render() {
@@ -31,4 +35,14 @@ class ContactCompany extends Component {
   }
 }
 
-export default (ContactCompany);
+function mapStateToProps(state) {
+  return {
+    contactForm: state.ContactForm
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addToForm }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactCompany);
