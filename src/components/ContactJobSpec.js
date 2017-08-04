@@ -14,7 +14,7 @@ class ContactCompany extends Component {
         Tell me more!
         <label>
           <span>File:</span>
-          <input type="text" name="file" onChange={this.props.handleChange} />
+          <input type="file" name="file" onChange={this.props.handleChange} />
         </label>
         <label>
           <span>Title: </span>
