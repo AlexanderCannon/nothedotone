@@ -95,3 +95,24 @@ transform: scale(0.9);
   transform: translate(-50%, -50%);
   top:50%
 }
+
+.contact__form-base{
+  min-height: 50vh;
+  margin-left: 50px;
+}
+.contact__form-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-container > label {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  margin-bottom: 50px;
+}
+.contact__form-container > label > span {
+  min-width: 125px;
+}
+.contact__form-container > label > input, .contact__form-container > label > textarea{
+  min-width: 200px;
+}

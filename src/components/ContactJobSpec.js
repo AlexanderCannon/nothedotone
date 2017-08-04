@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 
 class ContactCompany extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { value: '' };
-  }
-
   render() {
-    if (!this.props.show || this.props.show !== 'company') {
+    if (!this.props.show || this.props.show !== 'spec') {
       return null;
     }
     return (
